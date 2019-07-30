@@ -1,0 +1,37 @@
+<section>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+</section>
+<section>
+<div *ngFor="let pair of _topPairs" class="row justify-content-center listing-row">
+  <div class="col-md-10 block_listing_wrapper">
+    <div class="row justify-content-center block_head bg-dark">
+      <div class="col-md-12">
+        <div style="text-align:center">
+          <h1><strong>Exchange: </strong>{{ pair.exchange }}</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center listing_subhead_row">
+      <div class="col-md-12">
+        <h5><strong>From Symbol: </strong>{{ pair.fromSymbol }} - <strong>To Symbol: </strong>{{ pair.toSymbol }}</h5>
+      </div>
+    </div>
+    <div class="row justify-content-center block_misc">
+      <div class="col-md-12">
+        <h5><strong>Volume (24 Hour): </strong>{{ pair.volume24h }} - <strong>Volume (24 Hour To): </strong>{{ pair.volume24hTo }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section>
+  <div style="text-align:center">
+    <h1>
+      <button class="btn btn-primary" (click)="backToMain()">Return To Main Page</button>
+    </h1>
+  </div>
+</section>

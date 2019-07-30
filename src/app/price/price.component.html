@@ -1,0 +1,32 @@
+<section>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+</section>
+<section>
+  <div class="row justify-content-center">
+    <div *ngFor="let curr of objectKeys(_jsonData)" class="col-md-3 block_listing_wrapper block_listing_mini">
+      <div class="row justify-content-center block_head bg-dark">
+        <div class="col-md-12">
+          <div style="text-align:center">
+            <h2>{{ curr }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center block_misc">
+        <div class="col-md-11">
+          <p><strong>Value:</strong>{{ _jsonData[curr] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div style="text-align:center">
+    <h1>
+      <button class="btn btn-primary" (click)="backToMain()">Return To Main Page</button>
+    </h1>
+  </div>
+</section>

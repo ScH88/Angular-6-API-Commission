@@ -1,0 +1,55 @@
+<section>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+</section>
+<section>
+  <div style="text-align:center">
+    <p><strong>Time To:</strong> {{ miscInfo.timeTo }}</p>
+    <p><strong>Time From:</strong> {{ miscInfo.timeFrom }}</p>
+  </div>
+</section>
+<section>
+    <app-line-graph *ngIf="_histos" [_jsonArray]="_histos" uniqueId="highsandlows" headVal="time" val1="high" val2="low"></app-line-graph>
+    <br/>
+    <app-line-graph *ngIf="_histos" [_jsonArray]="_histos" uniqueId="opensandcloses" headVal="time" val1="open" val2="close"></app-line-graph>
+    <br/>
+    <app-line-graph *ngIf="_histos" [_jsonArray]="_histos" uniqueId="volumetoandfrom" headVal="time" val1="volumeto" val2="volumefrom"></app-line-graph>
+</section>
+<section>
+<div *ngFor="let histo of _histos" class="row justify-content-center">
+  <div class="col-md-10 block_listing_wrapper">
+      <div class="row justify-content-center block_head bg-dark">
+        <div class="col-md-12">
+          <div style="text-align:center">
+            <h2>Time: {{ histo.time }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center listing_subhead_row">
+        <div class="col-md-12">
+          <h5><strong>High: </strong>{{ histo.high }} - <strong>Low: </strong>{{ histo.low }}</h5>
+        </div>
+      </div>
+      <div class="row justify-content-center listing_subhead_row">
+        <div class="col-md-12">
+          <h5><strong>Open: </strong>{{ histo.open }} - <strong>Close: </strong>{{ histo.close }}</h5>
+        </div>
+      </div>
+      <div class="row justify-content-center block_misc">
+        <div class="col-md-12">
+          <p><strong>Volume From: </strong>{{ histo.volumefrom }} - <strong>Volume To: </strong>{{ histo.volumeto }}</p>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+<section>
+  <div style="text-align:center">
+    <h1>
+      <button class="btn btn-primary" (click)="backToMain()">Return To Main Page</button>
+    </h1>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+<section>
+  <div style="text-align:center">
+    <h1>
+      {{ title }}
+    </h1>
+  </div>
+</section>
+<div class="row justify-content-center listing-row">
+  <div class="col-md-10">
+    <section>
+      <div>
+        <!--
+        <img width="300" alt="Angular Logo" src="assets/img/sdgbjsdgsg">
+        -->
+        <p>The best API for getting free cryptocurrency live pricing data, OHLC historical data, volume data, tick data or block explorer data from multiple exchanges and blockchains. We have integrated with over 90 exchanges, 1800 coins and have over 22,000 trading pairs listed. Whether you are looking for live streaming data or historical tick data we are the one-stop shop for the whole cryptocurrency space.</p>
+        <p>You can use our data for free under a Creative Commons Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0) license ( <a href="https://creativecommons.org/licenses/by-nc/3.0/" target="_blank">https://creativecommons.org/licenses/by-nc/3.0/</a> ). Please make sure you credit us with a link if you use our data on your website or app. Storage and redistribution of CryptoCompare data is strictly prohibited without a commercial license agreement ( contact support for more info ).</p>
+        <p><strong>YOUR CLIENTS SHOULD DIRECTLY USE OUR APIS IF POSSIBLE. (THE HEADER Access-Control-Allow-Origin: * is only set on min-api paths)</strong></p>
+      </div>
+    </section>
+  </div>
+</div>
+<hr />
+<div class="row justify-content-center listing-row">
+  <div class="col-md-10">
+    <section>
+      <form #currencyForm="ngForm" (ngSubmit)="onSubmit(currencyForm)" novalidate>
+        <div class="form-group row justify-content-center">
+          <label for="queryMode" class="col-md-2">Query Type: </label>
+          <select
+           #currency_type="ngModel" #option_type class="custom-select col-md-10" name="option_type" [(ngModel)]="queryMode">
+           <option *ngFor="let option of options" value="{{option}}">{{ option }}</option>
+         </select>
+        </div>
+        <div>
+          <div class="form-group row justify-content-center">
+            <label for="fsym" class="col-md-2">Currency 1: </label>
+           <select (blur)="validateCurrency(currency_type.value)" (change)="validateCurrency(currency_type.value)"
+                  #currency_type="ngModel" [class.is-invalid]="currencyHasError===true && currency_type.touched"
+                  class="custom-select col-md-10" name="currency_type" [(ngModel)]="fsym">
+            <option value="default">Select currency</option>
+            <option *ngFor="let currency of currencies"
+            value="{{currency.code}}">  {{ currency.domain }}({{currency.code}})</option>
+          </select>
+          <small class="text-danger" *ngIf="currencyHasError===true">Input is required</small>
+           </div>
+           <div class="form-group row justify-content-center" [class.d-none]="queryMode ==='Top Pairs'">
+            <label for="tysm" class="col-md-2">Currency 2: </label>
+           <select (blur)="validateCurrency2(currency_type_2.value)" (change)="validateCurrency2(currency_type_2.value)"
+                  #currency_type_2="ngModel" [class.is-invalid]="currency2HasError===true && currency_type_2.touched"
+                  class="custom-select col-md-10" name="currency_type_2" [(ngModel)]="tsym">
+                  <option value="default">Select currency</option>
+                  <option *ngFor="let currency of currencies"
+                  value="{{currency.code}}">{{ currency.domain }}({{currency.code}})</option>
+            </select>
+            <small class="text-danger" *ngIf="currency2HasError===true">Input is required</small>
+          </div>
+          <div class="form-group row justify-content-center" *ngIf="queryMode==='HistoMinute' ||
+          queryMode === 'HistoHour' || queryMode === 'HistoDay' || queryMode === 'Top Pairs'">
+          <label for="limit" class="col-md-2">Limit Of Returns: </label>
+            <select #select_limit="ngModel" class="custom-select col-md-10" name="select_limit" [(ngModel)]="limit">
+             <option value="1">1</option> <option value="2">2</option><option value="3">3</option>  <option value="4">4</option>
+             <option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option>
+             <option value="9">9</option><option value="10">10</option> <option value="11">11</option> <option value="12">12</option>
+             <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option>
+             <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option>
+           </select>
+          </div>
+          <div class="form-group">
+            <div style="text-align:center">
+              <button [disabled]="currencyForm.form.invalid || (currencyHasError || currency2HasError)" class="btn btn-primary" type="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>

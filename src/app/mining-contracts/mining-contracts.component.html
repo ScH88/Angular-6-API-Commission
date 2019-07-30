@@ -1,0 +1,60 @@
+<section>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+</section>
+<section>
+<div *ngFor="let coin of objectKeys(_jsonData)" class="row justify-content-center listing-row">
+  <div class="col-md-10 block_listing_wrapper">
+      <div class="row justify-content-center block_head bg-dark">
+        <div class="col-md-12">
+          <div style="text-align:center">
+            <h2>{{ _jsonData[coin].Name }}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center listing_subhead_row">
+        <div class="col-md-4">
+          <h5>URL: {{ _jsonData[coin].Url }}</h5>
+        </div>
+        <div class="col-md-4">
+          <h5>Recommended: {{ _jsonData[coin].Recommended }}</h5>
+        </div>
+        <div class="col-md-4">
+          <h5>Sponsored: {{ _jsonData[coin].Sponsored }}</h5>
+        </div>
+      </div>
+      <div class="row justify-content-center listing_subhead_row">
+        <div class="col-md-4">
+          <h5>Currency: {{ _jsonData[coin].Currency }}</h5>
+        </div>
+        <div class="col-md-4">
+          <h5>Cost: {{ _jsonData[coin].Cost }}</h5>
+        </div>
+        <div class="col-md-4">
+          <h5>Fee Value: {{ _jsonData[coin].FeeValue }}</h5>
+        </div>
+      </div>
+      <div class="row justify-content-center block_misc">
+        <div class="col-md-4">
+          <p>Id: {{ _jsonData[coin].Id }}</p>
+          <p>Parent Id: {{ _jsonData[coin].Parentid }}</p>
+          <p>Algorithm: {{ _jsonData[coin].Algorithm }}</p>
+        </div>
+        <div class="col-md-4">
+          <p>LogoUrl: {{ _jsonData[coin].LogoUrl }}</p>
+          <p>AffiliateURL: {{ _jsonData[coin].AffiliateURL }}</p>
+          <p>HashCoins: {{ _jsonData[coin].HashCoins }}</p>
+          <p>Hashes Per Second: {{ _jsonData[coin].HashesPerSecond }}</p>
+        </div>
+        <div class="col-md-4">
+          <p>Currencies Available: {{ _jsonData[coin].CurrenciesAvailable }}</p>
+          <p>Currencies Available Logo: {{ _jsonData[coin].CurrenciesAvailableLogo }}</p>
+          <p>Currencies Available String: {{ _jsonData[coin].CurrenciesAvailableString }}</p>
+        </div>
+      </div>
+  </div>
+</div>
+</section>

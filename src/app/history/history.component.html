@@ -1,0 +1,41 @@
+<section>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+</section>
+<section>
+  <p><strong>Time To:</strong> {{ miscInfo.timeTo }}</p>
+  <p><strong>Time From:</strong> {{ miscInfo.timeFrom }}</p>
+</section>
+<div *ngFor="let histo of _histos" class="row justify-content-center listing-row">
+<section>
+<div class="row justify-content-center listing-row">
+  <div class="col-md-10">
+    <h1><strong>Time: </strong>{{ histo.time }}</h1>
+  </div>
+</div>
+<div class="row justify-content-center listing-row">
+  <div class="col-md-5">
+    <h5><strong>High: </strong>{{ histo.high }}</h5>
+    <h5><strong>Low: </strong>{{ histo.low }}</h5>
+  </div>
+  <div class="col-md-5">
+    <h5><strong>Open: </strong>{{ histo.open }}</h5>
+    <h5><strong>Close: </strong>{{ histo.close }}</h5>
+  </div>
+  <div class="row justify-content-center listing-row">
+    <div class="col-md-12">
+      <p><strong>Volume From: </strong>{{ histo.volumefrom }} - <strong>Volume To: </strong>{{ histo.volumeto }}</p>
+    </div>
+  </div>
+</div>
+</section>
+<section>
+  <div style="text-align:center">
+    <h1>
+      <button class="btn btn-primary" (click)="backToMain()">Return To Main Page</button>
+    </h1>
+  </div>
+</section>

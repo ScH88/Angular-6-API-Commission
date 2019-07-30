@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color:#D3D3D3;
+}
+
+section {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.banner {
+  font-size:1em;
+}
+
+.banner a {
+  font-size:2.5em;
+  color:#FFF;
+}
+
+.banner_footer_separator {
+  margin-top:0;
+  margin-bottom:0;
+  border-color: #FFF;
+}
+
+footer {
+  margin-top:100px;
+  color:#FFF;
+  height:200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+hr {
+  width:70%;
+}
+
+h1 {
+  margin-top:30px;
+  margin-bottom:30px;
+  text-decoration: underline;
+}
+
+.val1_legend {
+  font-size:2em;
+  color:#008000;
+}
+
+.val2_legend {
+  font-size:2em;
+  color:#ff0000;
+}
+
+.block_listing_wrapper {
+  //
+  margin-bottom:20px;
+  //-moz- prefix for mozilla compatibility
+  -moz-border-radius:10px;
+  //-webkit- prefix for chrome compatibility
+  -webkit-border-radius:10px;
+  //Regular border radius
+  border-radius:10px;
+  //Border colour and thickness
+  border:1px solid black;
+}
+
+.block_listing_mini {
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.block_head {
+  width:auto;
+  color:#FFF;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.listing_subhead_row {
+  width:auto;
+  color:#FFF;
+  padding:10px;
+  background-color:#696969;
+}
+
+.block_misc {
+  padding:10px;
+}
+
+.graph_svg {
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.btn-primary {
+  background-color:#696969;
+  border:2px solid #000;
+}
+
+@media (max-width:767px) {
+  main {
+    padding-left:5%;
+    padding-right:5%;
+  }
+}

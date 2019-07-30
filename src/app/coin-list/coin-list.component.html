@@ -1,0 +1,61 @@
+<section>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+</section>
+<section>
+<div *ngFor="let coin of objectKeys(_jsonData)" class="row justify-content-center">
+  <div class="col-md-10 block_listing_wrapper">
+      <div class="row justify-content-center block_head bg-dark">
+        <div class="col-md-12">
+          <div style="text-align:center">
+            <h2>{{ _jsonData[coin].Name }}</h2>
+          </div>
+        </div>
+      </div>
+        <div class="row justify-content-center listing_subhead_row">
+          <div class="col-md-4">
+            <h5>Symbol: {{ _jsonData[coin].Symbol }}</h5>
+          </div>
+          <div class="col-md-4">
+            <h5>Full Name: {{ _jsonData[coin].FullName }}</h5>
+          </div>
+          <div class="col-md-4">
+            <h5>Coin Name: {{ _jsonData[coin].CoinName }}</h5>
+          </div>
+        </div>
+        <div class="row justify-content-center listing_subhead_row">
+          <div class="col-md-4">
+            <h5>Is Trading: {{ _jsonData[coin].IsTrading }}</h5>
+          </div>
+          <div class="col-md-4">
+            <h5>Smart Contact Address: {{ _jsonData[coin].SmartContractAddress }}</h5>
+          </div>
+          <div class="col-md-4">
+            <h5>Url: {{ _jsonData[coin].Url }}</h5>
+          </div>
+        </div>
+      <div class="row justify-content-center block_misc">
+        <div class="col-md-4">
+          <p>Id: {{ _jsonData[coin].Id }}</p>
+          <p>Image Url: {{ _jsonData[coin].ImageUrl }}</p>
+          <p>Sort Order: {{ _jsonData[coin].SortOrder }}</p>
+          <p>Sponsored: {{ _jsonData[coin].Sponsored }}</p>
+        </div>
+        <div class="col-md-4">
+          <p>Algorithm: {{ _jsonData[coin].Algorithm }}</p>
+          <p>Built On: {{ _jsonData[coin].BuiltOn }}</p>
+          <p>Fully Premined: {{ _jsonData[coin].FullyPremined }}</p>
+          <p>PreMinedValue {{ _jsonData[coin].PreMinedValue }}</p>
+        </div>
+        <div class="col-md-4">
+          <p>Proof Type: {{ _jsonData[coin].ProofType }}</p>
+          <p>Total Coin Supply: {{ _jsonData[coin].TotalCoinSupply }}</p>
+          <p>Total Coins Free Float: {{ _jsonData[coin].TotalCoinsFreeFloat }}</p>
+        </div>
+      </div>
+ </div>
+</div>
+</section>

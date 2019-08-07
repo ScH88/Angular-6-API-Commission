@@ -100,5 +100,4 @@ export class LineGraphComponent implements OnInit {
     .attr('transform', 'translate(0 ,' + (this.chartArea.height) + ')');
     chartGroup.append('g').attr('class', 'y-axis');
   }
-
 }

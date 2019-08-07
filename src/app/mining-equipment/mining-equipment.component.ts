@@ -19,8 +19,8 @@ export class MiningEquipmentComponent implements OnInit {
     this._apiRetrieval.miningContracts()
         .subscribe(
           result =>  {
-            this._jsonData = result.MiningData,
-            console.log('Success', result.MiningData)
+            this._jsonData = result.MiningData;
+            console.log('Success', result.MiningData);
           },
           error => this.errorMsg = error.statusText
         );

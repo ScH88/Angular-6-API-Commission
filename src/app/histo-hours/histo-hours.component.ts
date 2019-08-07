@@ -58,5 +58,4 @@ export class HistoHoursComponent implements OnInit {
     let selectedMode = "HistoMinute";
     this.router.navigate(['home', {mode: selectedMode, fsym: selectedFsym, tsym: selectedTsym, limit: selectedLimit}]);
   }
-
 }

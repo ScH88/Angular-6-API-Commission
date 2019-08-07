@@ -45,5 +45,4 @@ export class PriceHistoricalComponent implements OnInit {
   objectKeys(obj) {
     return Object.keys(obj);
   }
-
 }

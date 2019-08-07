@@ -38,8 +38,8 @@ export class HistoDaysComponent implements OnInit {
           result =>  {
             this._histos = result.Data;
             this.miscInfo = {
-              timeTo:result.TimeTo;
-              timeFrom:result.TimeFrom;
+              timeTo:result.TimeTo,
+              timeFrom:result.TimeFrom
             },
             console.log('Success', result);
           },

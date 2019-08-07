@@ -38,8 +38,8 @@ export class HistoMinutesComponent implements OnInit {
           result =>  {
             this._histos = result.Data;
             this.miscInfo = {
-              timeTo:result.TimeTo
-              timeFrom:result.TimeFrom,
+              timeTo:result.TimeTo,
+              timeFrom:result.TimeFrom
             },
             console.log('Success', result);
           },
@@ -58,5 +58,4 @@ export class HistoMinutesComponent implements OnInit {
     let selectedMode = "HistoMinute";
     this.router.navigate(['home', {mode: selectedMode, fsym: selectedFsym, tsym: selectedTsym, limit: selectedLimit}]);
   }
-
 }

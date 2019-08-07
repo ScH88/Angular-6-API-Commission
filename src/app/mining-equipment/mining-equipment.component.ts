@@ -29,5 +29,4 @@ export class MiningEquipmentComponent implements OnInit {
   objectKeys(obj) {
     return Object.keys(obj);
   }
-
 }

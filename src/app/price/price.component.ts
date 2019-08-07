@@ -28,8 +28,8 @@ export class PriceComponent implements OnInit {
     this._apiRetrieval.price(this.fsym, this.tsym)
         .subscribe(
           result =>  {
-            this._jsonData = result;
-            console.log('Success', result);
+            this._jsonData = result,
+            console.log('Success', result)
           },
           error => this.errorMsg = error.statusText
       );

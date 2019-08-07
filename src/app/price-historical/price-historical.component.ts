@@ -28,8 +28,8 @@ export class PriceHistoricalComponent implements OnInit {
     this._apiRetrieval.priceHistorical(this.fsym, this.tsym)
         .subscribe(
           result =>  {
-            this._jsonData = result[this.fsym],
-            console.log('Success', result[this.fsym])
+            this._jsonData = result[this.fsym];
+            console.log('Success', result[this.fsym]);
           },
           error => this.errorMsg = error.statusText
         );

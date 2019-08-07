@@ -27,5 +27,4 @@ export class MiningContractsComponent implements OnInit {
   objectKeys(obj) {
     return Object.keys(obj);
   }
-
 }

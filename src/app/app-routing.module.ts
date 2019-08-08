@@ -17,7 +17,7 @@ const routes: Routes = [
     { path: '', redirectTo:'home', pathMatch:'full' },
     { path: 'home', component:HomeComponent},
     { path: 'coinlist', component:CoinListComponent},
-    { path: 'history', redirectTo: '/history/:days', pathMatch: 'full' }
+    { path: 'history', redirectTo: '/history/:days', pathMatch: 'full' },
     { path: 'history/mins', component:HistoMinutesComponent},
     { path: 'history/hrs', component:HistoHoursComponent},
     { path: 'history/days', component:HistoDaysComponent},
